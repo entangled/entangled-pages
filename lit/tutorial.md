@@ -34,7 +34,7 @@ This will create a directory in your current working directory with the name tha
 Inside the new directory, build the website.
 
 ```bash
-make site
+make site # only needed the first time
 ```
 
 The result will appear in `./docs/index.html`. Now, make watch
@@ -95,11 +95,24 @@ These are the recommended steps to start a project using Entangled. Following th
    EOF
    ~~~
 
-4. Create a Makefile (there is an example in the `bootstrap-submodule` project). Change the `input_files` variable to the list of your Markdown sources.
+4. Create a Makefile (for instance, by copying the example in the `bootstrap-submodule` project).
 
    ```bash
    cp bootstrap/Makefile.example Makefile
-   {vim|nano|emacs} Makefile
+   ```
+
+   Open your `Makefile` with your favourite editor. Change the `input_files` variable in `Makefile` to the list of your Markdown sources:
+
+   ```bash
+   <in Makefile>
+   input_files := lit/index.md
+   ```
+
+   If you want the results of your code chunks to be printed once executed, add also this line:
+
+   ```bash
+   <in Makefile>
+   pandoc_args := --filter pandoc-doctest
    ```
 
 5. Build the website. The result will appear in `./docs/index.html`
@@ -112,9 +125,24 @@ These are the recommended steps to start a project using Entangled. Following th
 
    ```bash
    entangled config > entangled.dhall
-   {vim|nano|emacs} entangled.dhall
    ```
    Once you do this more often, you may not want the overly verbose default configuration file. To generate a minimal configuration, run `entangled config -m` instead.
+
+   Open `entangled.dhall` with your favourite editor. Make sure that `lit/index.md` is included in the variable `watchlist`:
+
+   ```bash
+   <in entangled.dhall>
+   entangled = entangled.Config :: { database = Some ".entangled/db.sqlite"
+                                     , watchList = ["lit/index.md"] : List Text
+                                     }
+   ```
+
+   If you are using `entangled` for literate programming, you'll need to provide the `language` and `kernel` variables. Typically:
+
+   ```bash
+   <in entangled.dhall>
+   jupyter = [ { language = "Python", kernel = "python3" } ]
+   ```
 
 7. Make watch.
 
