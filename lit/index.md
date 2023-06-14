@@ -3,17 +3,16 @@ title: Entangled
 subtitle: literate programming for the new millennium
 footer: "[![](img/escience_white.png){style='height: 20pt'}](https://esciencecenter.nl/)"
 license:  "[Apache 2](https://www.apache.org/licenses/LICENSE-2.0)"
-github: "https://github.com/entangled/entangled/"
+github: "https://github.com/entangled/entangled.py/"
 ---
 
 <div class="container-fluid"><div class="row">
 :::: {#synopsis}
-- Make your code **look beatiful**
+- **Literate Programming** made easy
 - Create **live documents** in Markdown
 - Program in **any language** you like
-- Use your **favourite editor**
+- Use your **favourite editor/IDE**
 - Works well with **version control**
-- Powered by **Pandoc**
 ::::
 
 > **Literate programming** [/ˈlɪtəɹət ˈpɹəʊɡɹæmɪŋ/]{.phonetic} (computing) Literate programming is a programming paradigm introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated. [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
@@ -29,7 +28,17 @@ We're trying to increase the visibility of Entangled. If you like Entangled, ple
 > [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
 > ~~~
 
-# Get started {#section-markdown}
+# Get Started
+
+With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
+
+```bash
+pip install entangled_cli[rich]
+```
+
+This installs the `entangled` executable. The `[rich]` component is optional, but makes the output logs of Entangled slightly nicer to read.
+
+# Write Markdown {#section-markdown}
 
 > "A critical aspect of a programming language is the means it provides
 for using names to refer to computational objects." [Abelson, Sussman & Sussman - SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
@@ -123,6 +132,7 @@ count = len(words)
 
 > “Talk is cheap. Show me the code.” [Linus Torvalds]()
 
+<!--
 #### Test your documentation
 ::: {.example}
 :::: {.given-input}
@@ -157,63 +167,16 @@ word_count("Hebban olla uogala")
 4
 ```
 ::::
-:::
+:::-->
 
 # Documentation
-The latest version of Entangled is
 
-> ``` {.bash .eval #entangled-version}
-> entangled --version
-> ```
-
-- [Example gallery](https://entangled.github.io/examples)
 - [Tutorial: setting up a Literate project](tutorial.html)
 - [User Manual](manual.html)
-- [Use MkDocs to publish](https://entangled.github.io/mkdocs)
+- [Example gallery](https://entangled.github.io/examples)
+- [Use MkDocs to publish](https://entangled.github.io/mkdocs-plugin)
 
-## Components
-- [Use the Bootstrap 4 template](https://entangled.github.io/bootstrap)
-- [Bootstrap submodule](https://github.com/entangled/bootstrap-submodule)
-- [Pandoc filters](https://entangled.github.io/filters)
-
-# Installing Entangled {#section-entangled}
-
-## Prebuilt binaries
-We provide a prebuilt binary for Linux. The binary is statically compiled, so it should run on any distro. You can download them [from the Github releases section](https://github.com/entangled/entangled/releases/latest). We're still working on providing binaries for Windows and MacOS.
-
-If you downloaded the latest tarball, you can install Entangled by copying the contents to `~/.local/`, or `/usr/local`. If you prefer an uncluttered `local` directory, checkout [GNU Stow](https://www.gnu.org/software/stow/).
-
-## From source
-Entangled is written in Haskell, and can be built on Linux, MacOS and Windows. Currently the best way to install, is to [git clone https://github.com/entangled/entangled](https://github.com/entangled/entangled), and build with GHC &ge; 8.6 using Cabal 3.0. Most GNU/Linux distributions ship an older version of Haskell. The easiest way to install a newer version is through [GHCUp](https://www.haskell.org/ghcup/).
-
-## Running Entangled with Docker {#docker}
-Entangled is available as a [Docker image](https://hub.docker.com/r/nlesc/entangled).
-
-Assuming you have created a Markdown file, say `program.md`, you can start `entangled` by running
-
-```bash
-docker run --rm --user $(id -u):$(id -g) --volume $PWD:/data \
-        nlesc/entangled deamon ./program.md
-```
-
-This command starts a Docker container with the current working directory mounted as /data and running with your user/group id so files are written with the correct ownership.
-
-## Pandoc filters
-We have created a set of Python based Pandoc filters that can:
-
-- (forward) **Tangle** your code
-- Add **name tags** to rendered output
-- Run **documentation tests** through Jupyter
-
-It is easy to install and has almost no dependencies outside of Pandoc and a recent version of Python (&ge; 3.7). This also makes the Python filters very easy to setup on automated builds, like Github Actions.
-
-Install these filters using:
-
-        pip install entangled-filters
-
-More information on Entangled filters: [https://github.com/entangled/filters](https://github.com/entangled/filters)
-
-## Bootstrap web template
+## Bootstrap web template for Pandoc
 To help you easily create a presentable website from your literate code, we provide a Bootstrap template for Pandoc. Probably the best way to use this template, is to fork [our repository at entangled/bootstrap-submodule](https://github.com/entangled/bootstrap-submodule), and add your fork as a submodule in your project:
 
         git submodule add git@github.com:<my bootstrap-submodule fork>
@@ -230,65 +193,45 @@ but this approach is less flexible. For more information, see [the tutorial](tut
 
 - [Why all you'll ever need is Markdown](https://blog.esciencecenter.nl/why-all-youll-ever-need-is-markdown-dc604f0ab309) --- Introduction to Pandoc, and Pandoc filters.
 - [Entangled, a bi-directional Literate Programming tool](https://blog.esciencecenter.nl/entangled-1744448f4b9f) --- Presenting Entangled, a tool for pain free literate programming.
+- [Literate Programming in Science: the why](https://blog.esciencecenter.nl/literate-programming-in-science-1669094541a7) --- Explaining why Literate Programming is particularly well matched with scientific programming.
+- [Literate Programming in Science: the how](https://blog.esciencecenter.nl/literate-programming-in-science-ed94dcc8f758) --- Showing methods for Literate Programming, comparing Entangled to Jupyter, RMarkdown and Org-mode.
+- [Unweaving legacy code using Entangled](https://blog.esciencecenter.nl/unweaving-legacy-code-using-entangled-2e6380a88b2f) --- Showing how you can use Entangled to reverse-engineer unreadable legacy code.
 
 ### Literate Books
 These are some awesome books written with a literate philosophy in mind.
 
-``` {.dhall .bootstrap-card-deck}
-let Card = ./schema/Card.dhall
-let Location = < Top | Right | Bottom | Left >
-
-in [ Card :: { title = "Pharr, Jakob & Humphreys - Physically Based Rendering"
-             , text =
-                ''
-                Explains physically realistic 3D rendering, while implementing the same
-                techniques in C++. This book is so amazing, it actually won an Acadamy
-                Award for technical achievement. The book uses the same *noweb*
-                notation for code block references we do.
-                ''
-             , link = Some { href = "https://www.pbrt.org/"
-                           , content = "PBRT" }
-             , image = Some "img/pbrt.png"
-             , imageLocation = Location.Left
-             }
-   ]
+``` {.markdown .bootstrap-card-deck}
+---
+title: "Pharr, Jakob & Humphreys - Physically Based Rendering"
+link: "[PBRT](https://www.pbrt.org/)"
+image: img/pbrt.png
+imageLocation: left
+---
+Explains physically realistic 3D rendering, while implementing the same techniques in C++. This book is so amazing, it actually won an Acadamy Award for technical achievement. The book uses the same *noweb* notation for code block references we do.
 ```
 
-``` {.dhall .bootstrap-card-deck}
-let Card = ./schema/Card.dhall
-let Location = < Top | Right | Bottom | Left >
-
-in [ Card :: { title = "Sussman & Wisdom - Structure and Interpretation of Classical Mechanics"
-             , text =
-                ''
-                Does not use *noweb*, but subscribes to the many founding
-                principles of literate programming. This is a text book on classical mechanics
-                and specifically the Lagrangian and Hamiltonian discriptions of physics.
-                ''
-             , link = Some { href = "https://mitpress.mit.edu/books/structure-and-interpretation-classical-mechanics-second-edition"
-                           , content = "SICM" }
-             , image = Some "img/sicm.jpg"
-             , imageLocation = Location.Left
-             }
-   ]
+``` {.markdown .bootstrap-card-deck}
+---
+title: "Sussman & Wisdom - Structure and Interpretation of Classical Mechanics"
+link: "[SICM](https://mitpress.mit.edu/books/structure-and-interpretation-classical-mechanics-second-edition)"
+image: img/sicm.jpg             
+imageLocation: left
+---
+Does not use *noweb*, but subscribes to the many founding
+principles of literate programming. This is a text book on classical mechanics
+and specifically the Lagrangian and Hamiltonian descriptions of physics.
 ```
 
-``` {.dhall .bootstrap-card-deck}
-let Card = ./schema/Card.dhall
-let Location = < Top | Right | Bottom | Left >
-
-in [ Card :: { title = "Hudak & Quick - The Haskell School of Music"
-             , text =   
-                ''
-                From signals to symphonies, this book fuses the authors' passion for music and the Haskell programming language.
-                ''
-             , link = Some { href = "http://euterpea.com/haskell-school-of-music/"
-                           , content = "HSOM" }
-             , image = Some "img/hsom.jpg"
-             , imageLocation = Location.Left
-             }
-   ]
+``` {.markdown .bootstrap-card-deck}
+---
+title: "Hudak & Quick - The Haskell School of Music"
+link: "[HSOM](http://euterpea.com/haskell-school-of-music/)"
+image: img/hsom.jpg
+imageLocation: left
+---
+From signals to symphonies, this book fuses the authors' passion for music and the Haskell programming language.
 ```
+
 
 ### Pandoc filters
 

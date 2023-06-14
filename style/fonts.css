@@ -1,5 +1,4 @@
-/* ~\~ language=CSS filename=style/fonts.css */
-/* ~\~ begin <<lit/doctheme.md|style/fonts.css>>[0] */
+/* ~/~ begin <<lit/doctheme.md#style/fonts.css>>[init] */
 @font-face {
     font-family: zillaSlab;
     font-weight: 300;
@@ -60,4 +59,4 @@
          url(fonts/AnonymousPro-BoldItalic.woff2) format('woff2'),
          url(fonts/AnonymousPro-BoldItalic.ttf) format('ttf');
 }
-/* ~\~ end */
+/* ~/~ end */

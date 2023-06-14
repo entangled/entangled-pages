@@ -20,6 +20,7 @@
 # appear.
 input_files := lit/index.md lit/tutorial.md lit/manual.md
 html_targets := $(input_files:lit/%.md=docs/%.html)
+script_dir := .entangled/scripts
 
 # Arguments to Pandoc; these are reasonable defaults
 pandoc_args += --template bootstrap/template-topbar.html
@@ -27,10 +28,11 @@ pandoc_args += --css css/nlesc.css
 pandoc_args += --css css/code-examples.css
 pandoc_args += -t html5 -s --mathjax --toc
 pandoc_args += --toc-depth 1
-pandoc_args += --filter pandoc-doctest
-pandoc_args += --filter pandoc-bootstrap
-pandoc_args += --filter pandoc-citeproc
-pandoc_args += --filter pandoc-fignos
+pandoc_args += --lua-filter $(script_dir)/eval.lua
+pandoc_args += --lua-filter $(script_dir)/annotate.lua
+pandoc_args += --lua-filter $(script_dir)/bootstrap-card-deck.lua
+# pandoc_args += --filter pandoc-bootstrap
+# pandoc_args += --filter pandoc-fignos
 pandoc_args += -f markdown+multiline_tables+simple_tables
 
 # Load syntax definitions for languages that are not supported
@@ -60,7 +62,7 @@ clean:
 watch:
 	@tmux new-session make --no-print-directory watch-pandoc \; \
 		split-window -v make --no-print-directory watch-browser-sync \; \
-		split-window -v entangled daemon \; \
+		split-window -v entangled watch \; \
 		select-layout even-vertical \;
 
 watch-pandoc:
