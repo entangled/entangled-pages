@@ -19,6 +19,9 @@ github: "https://github.com/entangled/entangled.py/"
 
 </div></div>
 
+<script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
+        data-autoplay="true" data-speed="2"></script>
+
 # About
 Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.
 
@@ -33,10 +36,8 @@ We're trying to increase the visibility of Entangled. If you like Entangled, ple
 With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
 
 ```bash
-pip install entangled_cli[rich]
+pip install entangled_cli
 ```
-
-This installs the `entangled` executable. The `[rich]` component is optional, but makes the output logs of Entangled slightly nicer to read.
 
 # Write Markdown {#section-markdown}
 
