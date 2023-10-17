@@ -15,9 +15,26 @@ github: "https://github.com/entangled/entangled.py/"
 - Works well with **version control**
 ::::
 
-> **Literate programming** [/ˈlɪtəɹət ˈpɹəʊɡɹæmɪŋ/]{.phonetic} (computing) Literate programming is a programming paradigm introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated. [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
+> **Entangled** is a tool that allows to `entangle` code and text in a simple Markdown document. 
 
 </div></div>
+
+# Get Started
+
+With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
+
+```bash
+pip install entangled_cli
+```
+
+You can also install it through `poetry`,
+
+```bash
+poetry add entangled_cli
+```
+
+<!-- link to the first project tutorial -->
+
 
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
@@ -31,13 +48,8 @@ We're trying to increase the visibility of Entangled. If you like Entangled, ple
 > [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
 > ~~~
 
-# Get Started
+# Features
 
-With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
-
-```bash
-pip install entangled_cli
-```
 
 # Write Markdown {#section-markdown}
 
