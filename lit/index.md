@@ -33,9 +33,6 @@ Or using `poetry`,
 poetry add entangled_cli
 ```
 
-# Tutorial
-
-To be included.
 
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
@@ -51,7 +48,57 @@ We're trying to increase the visibility of Entangled. If you like Entangled, ple
 
 # Features
 
-To be included.
+#### Build hook example
+::: {.example}
+:::: {.given-input}
+~~~markdown
+The snippet for generating the data is given 
+as a dependency for that data; to generate 
+the figure, both result.csv and the code snippet 
+are dependencies.
+
+``` {.python .build target="result.csv"}
+import pandas as pd
+import numpy as np
+
+data = {'x': np.arange(10),
+        'y': np.random.rand(10)}
+df = pd.DataFrame(data)
+df.to_csv("result.csv")
+```
+
+``` {.python .build target="plot.svg" deps="result.csv"}
+import pandas as pd
+
+df = pd.read_csv("result.csv")
+plot = df.plot()
+plot.savefig("plot.svg")
+```
+~~~
+::::
+:::: {.generated-output}
+The snippet for generating the data is given as a dependency for that data; to generate the figure, both result.csv and the code snippet are dependencies.
+``` {.python .build target="data/result.csv"}
+import pandas as pd
+import numpy as np
+
+data = {'x': np.arange(10),
+        'y': np.random.rand(10)}
+df = pd.DataFrame(data)
+df.to_csv("data/result.csv")
+```
+
+``` {.python .build target="fig/plot.svg" 
+    deps="data/result.csv"}
+import pandas as pd
+
+df = pd.read_csv("data/result.csv")
+plot = df.plot()
+plot.savefig("fig/plot.svg")
+```
+::::
+:::
+
 
 # Write Markdown {#section-markdown}
 
@@ -110,7 +157,7 @@ def vector_length(x, y):
  words = sentence.split()
  ```
 
- Counting is done with the `length`
+ Counting is done with the `len`
  function.
 
  ``` {.python #count-words}
