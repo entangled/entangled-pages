@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "entangled-pages"
+version = "0.1.0"
+description = ""
+authors = ["Olga Lyashevska <olga@herenstraat.nl>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.0"
+entangled-filters = "^0.8.3"
+entangled-cli = "^2.0.0b6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -4,6 +4,9 @@
 #
 # and that you have your literate sources in `./lit`.
 #
+# Recursively initialize and update git submodules: 	  
+# 	  git submodule update --init --recursive
+#
 # Make sure you have the following things installed:
 #
 #   - Entangled (the daemon)
