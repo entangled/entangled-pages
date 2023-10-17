@@ -27,14 +27,15 @@ With the 2.0 release, Entangled is now available as a Python package, installabl
 pip install entangled_cli
 ```
 
-You can also install it through `poetry`,
+Or using `poetry`,
 
 ```bash
 poetry add entangled_cli
 ```
 
-<!-- link to the first project tutorial -->
+# Tutorial
 
+To be included.
 
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
@@ -50,6 +51,7 @@ We're trying to increase the visibility of Entangled. If you like Entangled, ple
 
 # Features
 
+To be included.
 
 # Write Markdown {#section-markdown}
 
