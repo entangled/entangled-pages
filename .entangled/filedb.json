@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0b3",
+  "files": [
+    {
+      "path": "style/nlesc.css",
+      "deps": [
+        "lit/doctheme.md"
+      ],
+      "modified": "2023-06-14T23:39:31.306853",
+      "hexdigest": "e4d9dfaa79171cc01e2dfb7f760ce9a1043fc67176a43b9fb2366488253bda9d"
+    },
+    {
+      "path": "style/fonts.css",
+      "deps": [
+        "lit/doctheme.md"
+      ],
+      "modified": "2023-06-14T16:10:56.940008",
+      "hexdigest": "2cb2df610508ff6f44b9d5e33add39cd670a8ed253402b2a66d1af7ed353c190"
+    },
+    {
+      "path": "docs/css/code-examples.css",
+      "deps": [
+        "lit/doctheme.md"
+      ],
+      "modified": "2023-06-14T23:39:31.307853",
+      "hexdigest": "954415a17c207fdc7d97b0825928cb72a93a412ef17e994926f523a7553dfda6"
+    },
+    {
+      "path": "lit/doctheme.md",
+      "deps": null,
+      "modified": "2023-06-14T23:39:31.271853",
+      "hexdigest": "30621b221b89f9f0618a55a1fcc4648b093bc54108e29f118c1b7a2d9487f0d0"
+    },
+    {
+      "path": "lit/index.md",
+      "deps": null,
+      "modified": "2023-06-15T13:18:05.398085",
+      "hexdigest": "6d71ff68524111f885c1de49e5f2ead9171c80a7bc025b4e859b18b068e991db"
+    },
+    {
+      "path": "lit/manual.md",
+      "deps": null,
+      "modified": "2023-06-14T21:59:57.282365",
+      "hexdigest": "0ec316d891dff3f934fdad2f80dceabe6c536097b373bf1c25db3ba324cc6f5f"
+    },
+    {
+      "path": "lit/tutorial.md",
+      "deps": null,
+      "modified": "2023-06-14T22:03:08.918330",
+      "hexdigest": "cd0390e831dc74e9e1e502f6d9ee6296c01866d041c3592fcb8ae912d46d4b0c"
+    },
+    {
+      "path": "lit/img/README.md",
+      "deps": null,
+      "modified": "2023-05-04T14:05:39.005615",
+      "hexdigest": "985189369c94ff66f5682d6ba31de1bf1e7c075af92aef5705137be6f12c18a6"
+    }
+  ],
+  "source": [],
+  "target": [
+    "style/nlesc.css",
+    "docs/css/code-examples.css",
+    "style/fonts.css"
+  ]
+}
