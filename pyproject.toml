@@ -2,7 +2,7 @@
 name = "entangled-pages"
 version = "0.1.0"
 description = ""
-authors = ["Olga Lyashevska <olga@herenstraat.nl>"]
+authors = ["Johan Hidding <j.hidding@esciencecenter.nl>"] 
 license = "Apache 2.0"
 readme = "README.md"
 
