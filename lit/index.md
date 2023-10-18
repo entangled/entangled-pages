@@ -21,34 +21,47 @@ github: "https://github.com/entangled/entangled.py/"
 
 # Get Started
 
-With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
+With the 2.0 release, Entangled is now available as a Python package. To install Entangled, all you need is a Python (version &ge;3.11) installation. If you use [`poetry`](https://python-poetry.org), and you start a new project,
 
 ```bash
-pip install entangled_cli
+poetry init 
+poetry add entangled-cli
 ```
 
-Or using `poetry`,
+The `poetry init` command will create a `pyproject.toml` file and a virtual environment to install Python dependencies in. To activate the virtual environment, run `poetry shell` inside the project directory.
+
+Or, if you prefer plain old `pip`,
 
 ```bash
-poetry add entangled_cli
+pip install entangled-cli
 ```
-
 
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
 
 # About
-Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.
+Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown. In this way Entangled offers a two-way synchronisation mechanism and ensures that your Markdown files stay up-to-date with your code and vice-versa.
 
-We're trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/) to the appropriate location in your project:
+We are trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge to the appropriate location in your project:
 
+<!-- 
 > ~~~
 > [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
-> ~~~
+> ~~~ -->
+
+<div>
+  <span>
+    [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
+  </span>
+  <button class="btn" data-clipboard-text="[![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)">
+  <img src="img/clipboard.svg" width="50%">
+  </button>
+</div>
+
 
 # Features
 
-#### Build hook example
+#### Build hook
 ::: {.example}
 :::: {.given-input}
 ~~~markdown
@@ -99,8 +112,6 @@ plot.savefig("fig/plot.svg")
 ::::
 :::
 
-
-# Write Markdown {#section-markdown}
 
 > "A critical aspect of a programming language is the means it provides
 for using names to refer to computational objects." [Abelson, Sussman & Sussman - SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
