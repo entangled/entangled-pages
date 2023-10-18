@@ -19,7 +19,7 @@ github: "https://github.com/entangled/entangled.py/"
 
 </div></div>
 
-# Get Started
+# Get Started {#section-get-started}
 
 With the 2.0 release, Entangled is now available as a Python package. To install Entangled, all you need is a Python (version &ge;3.11) installation. If you use [`poetry`](https://python-poetry.org), and you start a new project,
 
@@ -39,27 +39,22 @@ pip install entangled-cli
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
 
-# About
+# About {#section-about}
 Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown. In this way Entangled offers a two-way synchronisation mechanism and ensures that your Markdown files stay up-to-date with your code and vice-versa.
 
-We are trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge to the appropriate location in your project:
-
-<!-- 
-> ~~~
-> [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
-> ~~~ -->
+We are trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge [![Entangled](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/) to the appropriate location in your project:
 
 <div>
-  <span>
-    [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
-  </span>
+  <text>
+    ```[![Entangled](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)```
+  </text>
   <button class="btn" data-clipboard-text="[![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)">
   <img src="img/clipboard.svg" width="50%">
   </button>
 </div>
 
 
-# Features
+# Features {#section-features}
 
 #### Build hook
 ::: {.example}
@@ -242,7 +237,7 @@ word_count("Hebban olla uogala")
 ::::
 :::-->
 
-# Documentation
+# Documentation {#section-documentation}
 
 - [Tutorial: setting up a Literate project](tutorial.html)
 - [User Manual](manual.html)
