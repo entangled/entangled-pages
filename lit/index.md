@@ -4,6 +4,7 @@ subtitle: literate programming for the new millennium
 footer: "[![](img/escience_white.png){style='height: 20pt'}](https://esciencecenter.nl/)"
 license:  "[Apache 2](https://www.apache.org/licenses/LICENSE-2.0)"
 github: "https://github.com/entangled/entangled.py/"
+topbar: ["[Home](index.html)", "[Tutorial](tutorial.html)", "[Manual](manual.html)", "[Examples](https://entangled.github.io/examples)", "[Templates](https://entangled.github.io/mkdocs-plugin)", "[Awesome]()"]
 ---
 
 <div class="container-fluid"><div class="row">
@@ -15,31 +16,98 @@ github: "https://github.com/entangled/entangled.py/"
 - Works well with **version control**
 ::::
 
-> **Literate programming** [/ˈlɪtəɹət ˈpɹəʊɡɹæmɪŋ/]{.phonetic} (computing) Literate programming is a programming paradigm introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated. [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
+> **Entangled** is a tool that allows to `entangle` code and text in a simple Markdown document. 
 
 </div></div>
+
+# Get Started {#section-get-started}
+
+With the 2.0 release, Entangled is now available as a Python package. To install Entangled, all you need is a Python (version &ge;3.11) installation. If you use [`poetry`](https://python-poetry.org), and you start a new project,
+
+```bash
+poetry init 
+poetry add entangled-cli
+```
+
+The `poetry init` command will create a `pyproject.toml` file and a virtual environment to install Python dependencies in. To activate the virtual environment, run `poetry shell` inside the project directory.
+
+Or, if you prefer plain old `pip`,
+
+```bash
+pip install entangled-cli
+```
 
 <script async id="asciicast-591604" src="https://asciinema.org/a/591604.js"
         data-autoplay="true" data-speed="2"></script>
 
-# About
-Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown.
+# About {#section-about}
+Entangled helps you write Literate Programs in Markdown. You put all your code inside Markdown code blocks. Entangled automatically extracts the code and writes it to more traditional source files. You can then edit these generated files, and the changes are being fed back to the Markdown. In this way Entangled offers a two-way synchronisation mechanism and ensures that your Markdown files stay up-to-date with your code and vice-versa.
 
-We're trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/) to the appropriate location in your project:
+We are trying to increase the visibility of Entangled. If you like Entangled, please consider adding this badge [![Entangled](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/) to the appropriate location in your project:
 
-> ~~~
-> [![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)
-> ~~~
+<div>
+  <text>
+    ```[![Entangled](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)```
+  </text>
+  <button class="btn" data-clipboard-text="[![Entangled badge](https://img.shields.io/badge/entangled-Use%20the%20source!-%2300aeff)](https://entangled.github.io/)">
+  <img src="img/clipboard.svg" width="50%">
+  </button>
+</div>
 
-# Get Started
 
-With the 2.0 release, Entangled is now available as a Python package, installable through `pip`,
+# Features {#section-features}
 
-```bash
-pip install entangled_cli
+#### Build hook
+::: {.example}
+:::: {.given-input}
+~~~markdown
+The snippet for generating the data is given 
+as a dependency for that data; to generate 
+the figure, both result.csv and the code snippet 
+are dependencies.
+
+``` {.python .build target="result.csv"}
+import pandas as pd
+import numpy as np
+
+data = {'x': np.arange(10),
+        'y': np.random.rand(10)}
+df = pd.DataFrame(data)
+df.to_csv("result.csv")
 ```
 
-# Write Markdown {#section-markdown}
+``` {.python .build target="plot.svg" deps="result.csv"}
+import pandas as pd
+
+df = pd.read_csv("result.csv")
+plot = df.plot()
+plot.savefig("plot.svg")
+```
+~~~
+::::
+:::: {.generated-output}
+The snippet for generating the data is given as a dependency for that data; to generate the figure, both result.csv and the code snippet are dependencies.
+``` {.python .build target="data/result.csv"}
+import pandas as pd
+import numpy as np
+
+data = {'x': np.arange(10),
+        'y': np.random.rand(10)}
+df = pd.DataFrame(data)
+df.to_csv("data/result.csv")
+```
+
+``` {.python .build target="fig/plot.svg" 
+    deps="data/result.csv"}
+import pandas as pd
+
+df = pd.read_csv("data/result.csv")
+plot = df.plot()
+plot.savefig("fig/plot.svg")
+```
+::::
+:::
+
 
 > "A critical aspect of a programming language is the means it provides
 for using names to refer to computational objects." [Abelson, Sussman & Sussman - SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
@@ -96,7 +164,7 @@ def vector_length(x, y):
  words = sentence.split()
  ```
 
- Counting is done with the `length`
+ Counting is done with the `len`
  function.
 
  ``` {.python #count-words}
@@ -170,7 +238,7 @@ word_count("Hebban olla uogala")
 ::::
 :::-->
 
-# Documentation
+# Documentation {#section-documentation}
 
 - [Tutorial: setting up a Literate project](tutorial.html)
 - [User Manual](manual.html)

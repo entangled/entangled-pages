@@ -5,6 +5,7 @@ version: 1.0.0
 footer: "[![](img/escience_white.png){style='height: 20pt'}](https://esciencecenter.nl/)"
 license:  "[Apache 2](https://www.apache.org/licenses/LICENSE-2.0)"
 github: "https://github.com/entangled/entangled.py/"
+topbar: ["[Home](index.html)", "[Tutorial](tutorial.html)", "[Manual](manual.html)", "[Examples](https://entangled.github.io/examples)", "[Templates](https://entangled.github.io/mkdocs-plugin)", "[Awesome]()"]
 ---
 
 # Installing Entangled
